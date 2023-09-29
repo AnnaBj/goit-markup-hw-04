@@ -39,7 +39,7 @@ body {
 
 .container {
   max-width: 1158px;
-  width: 100%;
+  width: 1158px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -401,7 +401,12 @@ nav a {
   font-size: 16px;
 }
 
+.portfolio-list-item-text:hover {
+  transform: translateY(0%);
+}
+
 .portfolio-list-item-text {
+  position: absolute;
   top: 0;
   font-size: 16px;
   line-height: 1.5;
@@ -493,6 +498,7 @@ nav a {
 .social-media-item {
   width: 40px;
   height: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-media-link {
