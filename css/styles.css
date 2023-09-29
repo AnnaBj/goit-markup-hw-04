@@ -127,7 +127,7 @@ nav a {
 }
 /*============ Contacts ============ */
 .contacts {
-margin-left: auto;
+  margin-left: auto;
 }
 
 .contacts-list {
@@ -196,13 +196,24 @@ margin-left: auto;
 .page-nav .link:hover {
   color: #18ffff;
 }
-.order {
+
+/* Hero */
+
+.hero {
+  background-color: #2e2f42;
+  background-image: linear-gradient(
+    rgba(46, 47, 66, 0.7),
+    rgba(46, 47, 66, 0.7),
+    url(../images/people-office.jpg)
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: #f4f4fd;
-  background: #2e2f42;
   padding: 188px 0;
 }
 
-.order-btn {
+.hero-bottom-btn {
   background-color: #4d5ae5;
   color: #fff;
   font-weight: 500;
@@ -216,13 +227,13 @@ margin-left: auto;
   padding: 16px 32px;
   gap: 10px;
   margin: 0 auto;
-  margin-top:48px;
+  margin-top: 48px;
   min-width: 169px;
   height: 56px;
 }
 
-.order-btn:hover,
-.order-btn:focus {
+.hero-bottom-btn:hover,
+.hero-bottom-btn:focus {
   background-color: #404bbf;
 }
 /*============ Feature ============ */
@@ -278,6 +289,10 @@ margin-left: auto;
 
 .section-text-team {
   text-align: center;
+}
+
+.soc-icon {
+  fill: #f4f4fd;
 }
 
 /*============ Portfolio ============ */
