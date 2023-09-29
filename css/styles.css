@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 p,
 h1,
@@ -92,7 +91,6 @@ nav li {
 }
 nav a {
   text-decoration: none;
-  color: #2e2f42;
 }
 
 .navigation-menu {
@@ -121,16 +119,21 @@ nav a {
 
 .menu-link {
   position: relative;
-  color: #404bbf;
   padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-link::after {
+.menu-link.current {
+  color: #404bbf;
+}
+
+.current::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -1px;
   height: 4px;
+  width: 100%;
   background-color: #404bbf;
   border-radius: 2px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -142,6 +145,7 @@ nav a {
 }
 /*============ Contacts ============ */
 .contacts {
+  font-style: normal;
   margin-left: auto;
 }
 
@@ -213,13 +217,13 @@ nav a {
 
 /* Hero */
 
-.hero-container {
+.hero {
   background-color: #2e2f42;
   background-image: linear-gradient(
-    rgba(46, 47, 66, 0.7),
-    rgba(46, 47, 66, 0.7),
-    url(../images/people-office.jpg)
-  );
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -342,6 +346,7 @@ nav a {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-media-link-team:hover,
@@ -376,13 +381,13 @@ nav a {
   height: 420px;
   gap: 32px;
   flex-shrink: 0;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-item:hover {
   transform: translateY(0%);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-info {
@@ -393,13 +398,16 @@ nav a {
   overflow: hidden;
 }
 
+.postfolio-list-item-text {
+  position: absolute;
+  color: #4d5ae5;
+}
+
 .section-subtitle-portfolio {
   margin-bottom: 8px;
 }
 
 .section-text-portfolio {
-  content: " 14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App";
-  position: absolute;
   top: 0;
   font-size: 16px;
   line-height: 1.5;
