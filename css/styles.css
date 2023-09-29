@@ -74,6 +74,8 @@ body {
 /*============ Navigation meny ============ */
 .header-navigation {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .container-navigation {
@@ -117,6 +119,22 @@ nav a {
   color: #404bbf;
 }
 
+.studio-navigation {
+  position: relative;
+  color: #404bbf;
+}
+
+.studio-navigation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .menu-link {
   padding: 24px 0;
 }
@@ -140,10 +158,12 @@ nav a {
   align-items: flex-start;
   justify-content: flex-end;
 }
+
 .contacts-list-link {
   color: #434455;
   font-style: normal;
   padding: 24px 0;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-list-link {
   color: #434455;
@@ -199,7 +219,7 @@ nav a {
 
 /* Hero */
 
-.hero {
+.hero .container {
   background-color: #2e2f42;
   background-image: linear-gradient(
     rgba(46, 47, 66, 0.7),
@@ -211,6 +231,7 @@ nav a {
   background-size: cover;
   color: #f4f4fd;
   padding: 188px 0;
+  max-width: 1440px;
 }
 
 .hero-bottom-btn {
@@ -230,6 +251,7 @@ nav a {
   margin-top: 48px;
   min-width: 169px;
   height: 56px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-bottom-btn:hover,
@@ -256,6 +278,16 @@ nav a {
   width: calc((100% - 72px) / 4);
 }
 
+.social-media-container-feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
+  background-color: #f4f4fd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
 /*============ Team ============ */
 
 .team {
@@ -276,6 +308,8 @@ nav a {
   border-radius: 0px 0px 4px 4px;
   background-color: #ffffff;
   text-align: center;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .team-member-info {
@@ -291,10 +325,33 @@ nav a {
   text-align: center;
 }
 
-.soc-icon {
+.social-media-icon-team {
   fill: #f4f4fd;
 }
 
+.social-media-list-team {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social-media-link-team {
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-media-link-team:hover {
+  background-color: #404bbf;
+}
+
+.social-media-link-team:focus {
+  background-color: #404bbf;
+}
 /*============ Portfolio ============ */
 .portfolio {
   display: flex;
@@ -315,21 +372,48 @@ nav a {
   flex-direction: row;
   align-items: flex-start;
 }
+
 .portfolio-list-item {
   display: flex;
   width: 360px;
   height: 420px;
   gap: 32px;
   flex-shrink: 0;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.portfolio-list-item:hover {
+  transform: translateY(0%);
+}
+
 .portfolio-info {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
   border-top: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .section-subtitle-portfolio {
   margin-bottom: 8px;
+}
+
+.section-text-portfolio {
+  content: " 14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App";
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 40px 32px;
+  background-color: #4d5ae5;
+  height: 100%;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*============ Footer ============ */
@@ -364,4 +448,55 @@ nav a {
   text-transform: uppercase;
   text-decoration: none;
   color: #4d5ae5;
+}
+
+.container .footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-logo-text {
+  margin-right: 120px;
+}
+
+.social-media-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.social-media-list {
+  display: flex;
+  gap: 16px;
+}
+
+.social-media-item {
+  width: 40px;
+  height: 40px;
+}
+
+.social-media-link {
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-media-link:hover {
+  background-color: #31d0aa;
+}
+
+.social-media-link:focus {
+  background-color: #31d0aa;
+}
+
+.footer-icon {
+  fill: #f4f4fd;
 }
